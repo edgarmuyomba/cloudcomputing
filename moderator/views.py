@@ -19,13 +19,13 @@ def approve(request, uuid):
     confession = Confession.objects.get(uuidField=uuid)
     confession.approved = True
     confession.save()
-    return redirect('moderator:index')
+    return redirect('moderator:pending')
 
 @login_required()
 def remove(request, uuid):
     confession = Confession.objects.get(uuidField=uuid)
     confession.delete()
-    return redirect('moderator:index')
+    return redirect('moderator:pending')
 
 @login_required()
 def approved(request):
