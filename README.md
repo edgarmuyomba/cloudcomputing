@@ -13,11 +13,11 @@ A webapplication that enables users to submit confessions and they are automatic
  3. In the root directory, activate the virtual environment by running the command in your terminal
     ```
        env\scripts\activate
+    ```
 
  4. Run the following command to install all the necessary requirements and dependencies for the project
     ```python code
        pip install -r requirements.txt
-    ```
     ```
  5. Run the server through your terminal and access the project afterwards on your browser, address localhost:8000
     ```
