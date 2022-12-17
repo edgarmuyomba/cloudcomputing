@@ -22,5 +22,4 @@ A webapplication that enables users to submit confessions and they are automatic
     ```
       python manage.py runserver
     ```
-    
-    [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=edgarmuyomba)](https://github.com/anuraghazra/github-readme-stats)
+   
