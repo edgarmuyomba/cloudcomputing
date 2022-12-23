@@ -72,6 +72,7 @@ def contact(request, uuid):
     print('Confirmation email to ', receipient , ' has been sent')
     server.quit()
     advert.contacted = True
+    advert.save()
     return redirect('moderator:adverts')
 
 
