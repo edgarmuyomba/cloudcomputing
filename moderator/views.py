@@ -3,6 +3,7 @@ from submission.models import Confession
 from moderator.models import Advert
 from django.contrib.auth.decorators import login_required
 import smtplib
+from email.mime.text import MIMEText
 
 def countFlags():
     flags = Confession.objects.all().filter(flag=True)
@@ -57,11 +58,21 @@ def adverts(request):
 def contact(request, uuid):
     advert = Advert.objects.get(uuid=uuid)
     sender = "edgarmatthew247@gmail.com"
+    password = "rnwyvtugeziiqyyr"
     receipient = advert.email
-    subject = "Advertising with TweetWave"
-    body = f"""Dear {advert.name}, <br> We are pleased to accept your request to advertise with our company. We believe that our p <br> latform will be a great fit for your business, and we are excited to help you reach your marketing goals. <br> To get started, please provide us with the following information: <br> A brief description of your business and the products or services you offer <br> The type of ad you would like to run (e.g. banner ad, sponsored post, etc.) <br> The target audience for your ad (e.g. age, gender, location, etc.) <br> The desired start and end dates for your ad campaign <br> Once we have this information, we will create a customized advertising plan for your business and provide you  <br> with a detailed proposal. We look forward to working with you and helping you achieve success with your advertising efforts. <br> Sincerely, <br> Admin - TweetWave"""
+    message = MIMEText(f"Dear {advert.name},\nWe are pleased to accept your request to advertise with our company. We believe that our platform will be a great fit for your business, and we are excited to help you reach your marketing goals. To get started, please provide us with the following information:\n- A brief description of your business and the products or services you offer The type of ad you would like to run (e.g. banner ad, sponsored post, etc.)\n- The target audience for your ad (e.g. age, gender, location, etc.)\n- The desired start and end dates for your ad campaign.\nOnce we have this information, we will create a customized advertising plan for your business and provide you with a detailed proposal. We look forward to working with you and helping you achieve success with your advertising efforts.\n\nSincerely,\nAdmin - TweetWave")
+    message['Subject'] = "Advertising with TweetWave"
+    message['From'] = "edgarmatthew247@gmail.com"
+    message['To'] = advert.email
     server = smtplib.SMTP("smtp.gmail.com", 587)
-    server.sendmail(sender, receipient, subject, body)
+    server.starttls()
+    server.login(sender, password)
+    print('Login success')
+    server.sendmail(sender, receipient, message.as_string())
+    print('Confirmation email to ', receipient , ' has been sent')
+    server.quit()
+    advert.contacted = True
+    return redirect('moderator:adverts')
 
 
 @login_required()

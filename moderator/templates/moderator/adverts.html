@@ -4,11 +4,16 @@
     {% for advert in adverts %}
         <div class="card mb-3">
             <div class="card-body">
-              <h5 class="card-title">{{ advert.name }}</h5>
+              <div class="card-title">
+                <h5>{{ advert.name }}</h5>
+                {% if advert.contacted %}
+                    <span class="badge badge-success float-right">Contacted</span>
+                {% endif %}
+              </div>
               <h6 class="card-subtitle mb-2 text-muted">{{ advert.company }}</h6>
               <p class="card-text">{{ advert.description }}</p>
-              <!-- <a href="{% url 'moderator:contact' advert.uuid %}" class="btn btn-success btn-sm">Accept</a> -->
-              <a href="#" class="btn btn-success btn-sm">Accept</a>
+              <a href="{% url 'moderator:contact' advert.uuid %}" class="btn btn-success btn-sm">Accept</a>
+              <!-- <a href="#" class="btn btn-success btn-sm">Accept</a> -->
               <a href="{% url 'moderator:reject' advert.uuid %}" class="btn btn-danger btn-sm">Reject</a>
             </div>
         </div>     
