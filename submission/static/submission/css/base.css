@@ -396,6 +396,16 @@ main .header-p{
     margin-top: 36px;
 }
 
+/* ==============ABOUT========= */
+.version{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+}
+
+
 /* ==============FOOTER========= */
 footer{
     height: 50px;
@@ -434,4 +444,12 @@ footer .copyright{
 
 footer .copy-tag{
     color: var(--color-secondary2);
+}
+
+/* ==============LOGIN========= */
+.login-header{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
