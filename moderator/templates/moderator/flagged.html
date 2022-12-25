@@ -1,5 +1,12 @@
 {% extends 'moderator/base.html' %}
 
+{% load static %}
+
+{% block sidebar %}
+    <!-- this is where you'll put the link to the css file for when this page is active -->
+    <link rel="stylesheet" href="{% static 'moderator/css/flagged.css'  %}">
+{% endblock sidebar %}
+
 {% block content %} 
     {% for flag in flags %}
             {% if flag.media %}
