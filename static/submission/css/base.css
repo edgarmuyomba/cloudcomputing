@@ -1,0 +1,38 @@
+#main {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+input[type="file"]+label {
+    color: white;
+    background-color: blue;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.d-inline-block {
+    white-space: nowrap;
+}
+
+a {
+    color: grey;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    height: 50px;
+    bottom: 0;
+}

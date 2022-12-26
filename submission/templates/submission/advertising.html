@@ -1,0 +1,107 @@
+{% extends "submission/base.html" %}
+{% load static %}
+
+{% block content%}
+    <div class="container">
+        <div class="advert-hero">
+            <div class="advert-info">
+                <div class="advert-header">
+                    <h1 class="text-center mt-5">ADVERTISE</h1>
+                    <h1>WITH US</h1>
+                </div>
+                <div class="advert-p">
+                    <p class="lead text-center mb-5">
+                        Interested in advertising your business on Tweetwave?.</p>
+                    <p>
+                        Here's what you need to know.
+                    </p>
+                </div>
+            </div>
+            <div class="advert-image">
+                <img src="{% static 'submission/img/ad-image.svg' %}" alt="Advert" style="width:400px; height: 400px;">
+            </div>
+        </div>
+        
+        <div class="row sales-info">
+            <div class="col-md-6">
+                <h3 class="info-hd">Reach a Large Audience</h3>
+                <p>With thousands of users tweeting confessions on Tweetwave every day, your ad will be seen by a wide
+                    range of people. Whether you're looking to promote a new product, a sale, or just raise awareness
+                    about your brand, Tweetwave can help you reach your target audience.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="info-hd">Affordable and Flexible</h3>
+                <p>Our advertising options are affordable and flexible, so you can choose the right plan for your
+                    business. You can target your ads by location, interests, and more, and you can easily track the
+                    performance of your ads to see how well they're doing.</p>
+            </div>
+        </div>
+        <div class="steps">
+            <h4 class="info-stp">STEPS</h4>
+            <div class="steps-bar">
+                <div class="step">
+                    <div class="st-circle">1</div>
+                    <h6 class="stp-hd">
+                        Fill in the business credentials
+                    </h6>
+                </div>
+                <div class="stp-ln"></div>
+                <div class="step">
+                    <div class="st-circle">2</div>
+                    <h6 class="stp-hd">
+                        Tell us about your business
+                    </h6>
+                </div>
+                <div class="stp-ln"></div>
+                <div class="step">
+                    <div class="st-circle">3</div>
+                    <h6 class="stp-hd">
+                        We shall give you feedback
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                
+                <form method="POST" action="{% url 'submission:advertising' %}">
+                    {% csrf_token %}
+                    <h4 class="form-header">FORM</h4>
+                    <div class="content">
+                        <div class="form-data">
+                            <h4>Name</h4>
+                            <div class="f-input">
+                                <i class="bx bxs-user"></i>
+                                <input type="text" placeholder='Enter your full name' id="name" name="name">
+                            </div>
+                        </div>
+                        <div class="form-data">
+                            <h4>Email</h4>
+                            <div class="f-input">
+                                <i class="bx bxs-envelope"></i>
+                                <input type="text" placeholder='Enter your email' id="email" name="email">
+                            </div>
+                        </div>
+                        <div class="form-data">
+                            <h4>Company <span class="text-muted">(Optional)</span></h4>
+                            <div class="f-input">
+                                <i class="bx bxs-buildings"></i>
+                                <input type="text" placeholder='Enter your Company Name' id="email" name="company">
+                            </div>
+                        </div>
+                        <div class="form-data">
+                            <h4>Description</h4>
+                            <div class="f-input">
+                                <textarea id="message" placeholder="Enter a short description about your requirements" name="message"></textarea>
+                            </div>
+                        </div>
+                    </div>  
+                    <input class="btn btn-primary" type="submit" value="Submit" id="submit-profile" >
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content%}
+
+{% block footer%}
+{% endblock footer%}

@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'users/css/boxicons-2.1.2/css/boxicons.min.css' %}">
+        <link rel="stylesheet" href="{% static 'users/css/base.css' %}">
+        <link rel="icon" href="{% static 'users/img/tweetwave.ico' %}">
+        <title>Login</title>
+    </head>
+    <body class="container">
+        <h1 class="login-header">TweetWave</h1>
+        <main role="main container">
+            <div class="login-image">
+                <img src="{% static 'users/img/login-image.svg' %}" alt="">
+            </div>
+            <form method="POST" action="{% url 'users:signin' %}">
+                {% csrf_token %}
+                <h4 class="form-header">LOGIN</h4>
+                    <div class="content">
+                        <div class="form-data">
+                            <h4>Name</h4>
+                            <div class="f-input">
+                                <i class="bx bxs-user"></i>
+                                <input type="text" placeholder='Enter your username' id="username" name="username">
+                            </div>
+                        </div>
+                        <div class="form-data">
+                            <h4>Password</h4>
+                            <div class="f-input">
+                                <i class="bx bxs-lock"></i>
+                                <input type="password" placeholder='Enter your password' id="password" name="password">
+                            </div>
+                        </div>
+                    </div>  
+                    <input class="btn btn-primary" type="submit" value="Login" id="submit-profile" >
+            </form>
+        </main>
+    </body>
+</html>

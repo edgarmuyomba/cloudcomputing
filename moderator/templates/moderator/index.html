@@ -1,0 +1,40 @@
+{% extends "moderator/base.html" %}
+
+{% load static %}
+
+{% block sidebar %}
+    <!-- this is where you'll put the link to the css file for when this page is active -->
+    <link rel="stylesheet" href="{% static 'moderator/css/index.css'  %}">
+{% endblock sidebar %}
+
+{% block content%}
+    <h1>Welcome to TweetWave!</h1>
+
+    <p>TweetWave is a platform where users can anonymously submit confessions to be tweeted. As the
+        administrator of this page, you can review and approve confessions before they are tweeted.</p>
+
+    <h2>How to Use TweetWave</h2>
+
+    <ol>
+        <li>Users visit the TweetWave website and submit a confession using the form on the page.</li>
+        <li>The confession is sent to your admin dashboard, where you can review and approve it.</li>
+        <li>Once you have approved a confession, it will be tweeted from the TweetWave Twitter account.
+        </li>
+    </ol>
+
+    <h2>Tips for Using TweetWave</h2>
+
+    <ul>
+        <li>Moderate confessions carefully to ensure that they are appropriate and in line with your guidelines.
+        </li>
+        <li>Encourage users to submit confessions by promoting the website on social media and other platforms.
+        </li>
+        <li>Use the analytics on your admin dashboard to track the performance of your tweets and see which
+            confessions are most popular.</li>
+    </ul>
+
+    <h2>Contact Us</h2>
+
+    <p>If you have any questions or need help using TweetWave, please contact us at
+        support@confessiontweeter.com. We're here to help you make the most of this platform!</p>
+{% endblock content%}

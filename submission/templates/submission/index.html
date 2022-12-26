@@ -1,0 +1,25 @@
+{% extends "submission/base.html" %}
+
+{% block content %}
+  <main role="main" id="main" class="bg-red-500">
+    <div class="container">
+      <h1 class="text-3xl font-bold underline header">
+        TweetWave
+      </h1>
+      <h4 class="header-sub">Be Yourself</h4>
+      <p class="header-p">With TweetWave, you can talk about anything. <br>
+        But you don’t have to share your real identity</p>
+      <form class="form p-1" action="{% url 'submission:saved' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="input-bar">
+          <input type="text" id="tweet" name="tweet" required placeholder="Enter your submission">
+          <div class="clip-f">
+            <label for="attachment" class="fas fa-paperclip fa-lg clip" style="cursor: pointer;"></label>
+            <input type="file" id="attachment" name="attachment" style="visibility: hidden;">
+          </div>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary mt-3 mx-auto">
+      </form>
+    </div>
+  </main>
+{% endblock content %}

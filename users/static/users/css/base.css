@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Pacifico&display=swap');
+
+:root{
+    --primary-color-hue: 252;
+    --dark-color-lightness: 17%;
+    --light-color-lightness: 95%;
+    --white-color-lightness: 100%;
+
+    --color-white: hsl(252, 30%, var(--white-color-lightness) );
+    --color-light: hsl(252, 30%, var(--light-color-lightness) );
+    --color-gray: hsl(252, 15%, 65%);
+    --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
+    --color-secondary: hsl(252, 100%, 90%);
+    --color-secondary2:hsl(177, 77%, 44%);
+    --color-success: hsl(120, 95%, 65%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-dark: hsl(252, 30%, var(--dark-color-lightness));
+    --color-black: hsl(252, 30%, 10%);
+
+    --border-radius: 24px;
+    --card-border-radius: 16px;
+    --btn-padding: 8px 20px;
+    --search-padding: 9.6px 16px;
+    --card-padding: 16px;
+
+    --sticky-top-left: 86.4px;
+    --sticky-top-right: -288px;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: Noto Sans;
+    color: var(--color-dark);
+    background: var(--color-light);
+    overflow-x: hidden;
+}
+
+/* GENERAL STYLES */
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+i{
+    color: var(--color-dark);
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+.btn{
+    display:inline-block;
+    padding: var(--btn-padding);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 16px;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+.btn-primary{
+    border: none;
+    background:#8835a1;
+    color: white;
+}
+
+.btn-primary:hover{
+    opacity: 0.8;
+    background:rgb(157, 105, 241) ;
+}
+
+.text-bold{
+    font-weight: 500;
+}
+
+.text-muted{
+    color: var(--color-gray);
+}
+
+.input-bar{
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content:space-evenly;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: var(--search-padding);
+}
+
+.input-bar .clip-f{
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:end;
+}
+
+.input-bar .clip{
+    margin-top: 10px;
+    color: var(--color-dark);
+}
+
+.input-bar input[type="text"]{
+    background: transparent;
+    width: 50vw;
+    margin-left: 10px;
+    font-size: 14px;
+    color: var(--color-dark);
+}
+
+.input-bar input[type="file"]{
+    width: 0;
+}
+
+/* ==============MAIN========= */
+main{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+
+.login-image{
+    width: 500px;
+    height: 500px;
+    
+    margin-right: 50px;
+}
+
+/* ==============LOGIN FORM========= */
+.login-header{
+    font-family: Pacifico;
+    font-size: 80px;
+    position: relative;
+}
+
+form{
+    width: 50%;
+}
+.form-header{
+    text-align: center;
+    font-family: Pacifico;
+}
+
+.content:first-child{
+    margin-top: 16px;
+}
+
+.form-data{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+}
+
+.form-data h4{
+    font-family: Noto Sans;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.form-data .f-input{
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    column-gap: 20px;
+    padding: var(--search-padding);
+    background: white;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.form-data .f-input input[type = 'text']{
+    width: 100%;
+    background: transparent;
+    color: var(--color-dark);
+}
+
+.form-data .f-input textarea{
+    height: 100px;
+    width: 100%;
+}
+
+.content:last-child{
+    margin-top: 36px;
+}
