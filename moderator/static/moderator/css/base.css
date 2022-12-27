@@ -288,6 +288,13 @@ img{
     transform: translate(-50%, -50%);
 }
 
+/* ==============FLAGGED========= */
+
+.notification-hd{
+    display: flex;
+    margin-right: 20px;
+}
+
 /* ==============ADVERTS========= */
 .card-title{
     display: flex;

@@ -18,6 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'moderator/css/boxicons-2.1.2/css/boxicons.min.css' %}">
     <link rel="stylesheet" href="{% static 'moderator/css/base.css' %}">
+    {% block sidebar %}
+    {% endblock sidebar %}
 </head>
 
 <body>
@@ -26,7 +28,7 @@
             <a class="sidebar-hd" href="{% url 'submission:index' %}">
                 <h4 class="side-header">TweetWave</h4>
             </a>
-            <a href="{% url 'moderator:index' %}" class="menu-item active" id="Index">
+            <a href="{% url 'moderator:index' %}" class="menu-item" id="Index">
                 <span><i class="bx bx-home"></i></span><h3>Home</h3>
             </a>
             <a href="{% url 'moderator:pending' %}" class="menu-item" id="Pending">
@@ -36,8 +38,10 @@
             <a href="{% url 'moderator:approved' %}" class="menu-item" id="Approved">
                 <span><i class="bx bx-user-check"></i></span><h3>Approved</h3>
             </a>
-            <a href="{% url 'moderator:flagged' %}" class="menu-item" id="Flagged profile-notifications">
-                <span><i class="bx bx-flag"></i></span><h3>Flagged</h3>
+            <a href="{% url 'moderator:flagged' %}" class="menu-item notification" id="Flagged">
+                <div class="notification-hd"><span><i class="bx bx-flag"></i></span><h3>Flagged </h3></div>
+                <div><span style="background: var(--color-black);" class="badge badge-secondary counter badge-pill d-inline">{{ number }}</span></div>
+                
             </a>
             <a href="{% url 'moderator:adverts' %}" class="menu-item" id="Adverts">
                 <span><i class="bx bx-tv"></i></span><h3>Adverts</h3>
