@@ -26,12 +26,12 @@
                 <h5 class="card-title">{{ advert.name }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{ advert.company }}</h6>
                 <p class="card-text">{{ advert.description }}</p>
-                <a href="{% url 'moderator:contact' advert.uuid %}" class="btn btn-success btn-sm">Accept</a>
-                <a href="{% url 'moderator:reject' advert.uuid %}" class="btn btn-danger btn-sm">Reject</a>
+                <a href="{% url 'moderator:contact' advert.uuid %}" class="btn btn-success">Accept</a>
+                <a href="{% url 'moderator:reject' advert.uuid %}" class="btn btn-danger">Reject</a>
                 </div>
             </div>
         {% endif %}
     {% empty %}
-        <h3>No pending business requests</h3>
+        <p>No pending business requests</p>
     {% endfor %}
 {% endblock content %}
