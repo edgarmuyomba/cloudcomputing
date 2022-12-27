@@ -37,11 +37,11 @@
                                 <div class="button-group btn-group">
                                     <form action="{% url 'moderator:remove' confession.uuidField %}" method="POST" class="mx-2">
                                         {% csrf_token %}
-                                        <button name="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        <button name="submit" class="btn btn-danger">Delete</button>
                                     </form>
                                     <form action="{% url 'moderator:approve' confession.uuidField %}" method="POST" class="mx-2">
                                         {% csrf_token %}
-                                        <button name="submit" class="btn btn-primary btn-sm">Approve</button>
+                                        <button name="submit" class="btn btn-success">Approve</button>
                                     </form>
                                 </div>
                             </div>
