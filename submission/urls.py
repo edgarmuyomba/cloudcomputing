@@ -14,5 +14,3 @@ urlpatterns = [
     path('business/', views.business, name='business'),
     path('about/', views.about, name='about'),
 ]  + static(MEDIA_URL, document_root=MEDIA_ROOT)
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

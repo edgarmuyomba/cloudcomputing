@@ -1,7 +1,6 @@
 from django.urls import path 
 from . import views
 from tweetwave.settings import MEDIA_ROOT, MEDIA_URL
-from django.conf import settings
 from django.conf.urls.static import static
 
 app_name = 'moderator' 
@@ -18,4 +17,3 @@ urlpatterns = [
     path('reject/<str:uuid>', views.reject, name='reject'),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
