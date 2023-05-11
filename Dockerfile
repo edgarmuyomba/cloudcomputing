@@ -9,3 +9,5 @@ EXPOSE 8000
 
 RUN python -m pip install -r requirements.txt
 RUN python manage.py migrate
+
+# docker-compose up --build
